@@ -1,0 +1,123 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+.pages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 2rem;
+  flex-grow: 1;
+}
+
+.page {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+}
+
+.page-enter {
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+
+
+// @media screen and (max-width: 768px) {
+//   html {
+//     font-size: 12px;
+//   }
+// }
+
+@media screen and (min-width: 768px) {
+  #root {
+    flex-direction: row;
+  }
+  
+  .hero {
+    flex-basis: 50%;
+    justify-content: center;
+  }
+  
+  .pages {
+    flex-basis: 50%;
+    border-left: 2px solid white;
+    margin:2rem 0;
+    padding:0 2rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  html {
+    font-size: 30px;
+  }
+}
+
+.button {
+  box-sizing: border-box;
+  background-color: #21bcee;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  width: fit-content;
+  padding: 0.6rem;
+  position: relative;
+  overflow: hidden;
+  transition: all .3s ease-in-out;
+
+  &:hover{
+    cursor: pointer;
+    box-shadow: 0 0 0 calc(1rem / 8) #333333, 0 0 0 calc(1rem / 4) #21bcee
+  }
+
+  &:hover:before{
+    opacity: 1; 
+    transform: translate(0,0);
+  }
+
+  &:before{
+    content: attr(data-hover);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translate(-100%,0);
+    transition: all .3s ease-in-out;
+  }
+
+  &:hover div{opacity: 0; transform: translate(100%,0)}
+  div{
+    transition: all .3s ease-in-out;
+  }
+}

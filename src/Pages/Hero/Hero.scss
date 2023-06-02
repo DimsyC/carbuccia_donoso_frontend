@@ -1,0 +1,28 @@
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin:2.5rem;
+
+    .greeting {
+      color: #add8e6;
+    }
+    
+    .fullname {
+      font-family: "Russo One", sans-serif;
+      font-size: 2rem;
+      white-space: nowrap;
+    }
+    
+    .carreer_title {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #add8e6;
+    }
+    
+    .motto {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
